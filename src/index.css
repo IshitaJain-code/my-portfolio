@@ -2,25 +2,25 @@
 
 @theme {
   --color-background: #0b1120;
-  --color-foreground: #edf2fb;
+  --color-foreground: #f0f2f5;
 
   --color-card: #121a2d;
 
-  --color-primary: #4c7dff;
-  --color-primary-foreground: #f8fbff;
+  --color-primary:#552daa;
+  --color-primary-foreground: #ffffff ;
 
-  --color-secondary: #6d4fd8;
-  --color-secondary-foreground: #f6f2ff;
+  --color-secondary: #1f2830;
+  --color-secondary-foreground:#552daa ;
 
-  --color-muted: #1a2438;
-  --color-muted-foreground: #94a3b8;
+  --color-muted: #252e37;
+  --color-muted-foreground: #7a8491;
 
-  --color-border: #26324a;
+  --color-border: #242b32;
 
    --radius: 0.75rem;
 
   --color-highlight: #1aa38f;
-  --color-surface: #17233b;
+  --color-surface: ffffff;
  
 }
 
@@ -39,4 +39,41 @@
   .font-serif{
     font-family: "Playfair Display",serif;
   }
+}
+
+
+@layer components{
+  .glass{
+    background-color: color-mix(in srgb, var(  --color-surface) 50% ,transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb,var(--color-border) 50% , transparent);
+  }
+  .glass-strong{
+    background-color: color-mix(in srgb, var(  --color-surface) 80% ,transparent);
+    backdrop-filter: blur(25px);
+    border: 1px solid color-mix(in srgb,var(--color-border) 80% , transparent);
+  }
+}
+
+@layer utilities{
+
+  @keyframes fade-in{
+    from{
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(10px);
+
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0px);
+
+    }
+  }
+
+  .animate-fade-in{
+    animation:fade-in 0.8s ease-out both;
+  }
+
 }
