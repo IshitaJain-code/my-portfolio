@@ -6,11 +6,12 @@
 
   --color-card: #121a2d;
 
-  --color-primary:#552daa;
+  --color-primary:#85a3ff;
   --color-primary-foreground: #ffffff ;
 
   --color-secondary: #1f2830;
-  --color-secondary-foreground:#552daa ;
+  --color-secondary-foreground:#85a3ff;
+  
 
   --color-muted: #252e37;
   --color-muted-foreground: #7a8491;
@@ -20,7 +21,7 @@
    --radius: 0.75rem;
 
   --color-highlight: #1aa38f;
-  --color-surface: ffffff;
+  --color-surface: #1a2329;
  
 }
 
@@ -52,6 +53,11 @@
     background-color: color-mix(in srgb, var(  --color-surface) 80% ,transparent);
     backdrop-filter: blur(25px);
     border: 1px solid color-mix(in srgb,var(--color-border) 80% , transparent);
+  }
+
+  .glow-text{
+    text-shadow: 0 0 30px
+    color-mix(in srgb,var(--color-primary) 50%, transparent);
   }
 }
 
